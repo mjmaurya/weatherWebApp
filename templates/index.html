@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Weather</title>
+        <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<style>
+input{
+  width: 500px;
+}
+body{
+  background-image: url('/back.jpg');
+}
+</style>   
+</head>
+    <body>
+        <div style="text-align: center;">
+          <form method="POST" action="http://localhost:5000/result">
+            <input type="text" name="mlocation" value="{{params[0]}}" placeholder="Enter Place Name" id="search"></input><button class="btn" type="submit">Check</button>
+          </form>
+        </div>
+        <div class="container-fluid" style="width: 100%; height:600px;background-image: url('/back.jpeg'); padding: 10px; text-align: center;">
+         <h1>{{params[2]}}&#8451; {{params[1]}}</h1>
+        <div class="row">
+          <div class="col" style="background-color:brown; margin: 10px;"></div>
+          <div class="col" style="background-color:cornflowerblue; margin: 10px; text-align: start;">
+            <div><span>Min Temp. : {{params[3]}} &#8451;</span></div>
+            <div><span>Max Temp. : 10 &#8451;</span></div>
+            <div><span>windSpeed : 10m/s</span></div>
+            <div><span>windGust  : 10m/s</span></div>
+            <div><span>visibility: {{params[4]}} Km</span></div>
+          </div>
+          <div class="col" style="background-color:coral; margin: 10px;">3</div>
+        </div>
+    </body>
+</html>
